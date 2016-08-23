@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "6/9VW/AyJyjRXLu+nbhqGYvOO2k=",
+			"path": "github.com/gorilla/handlers",
+			"revision": "a5775781a543af3c6b9f5baf10995e4d14168950",
+			"revisionTime": "2016-08-16T18:47:29Z"
+		},
+		{
+			"checksumSHA1": "TfZ8ulM+No3vdOTjK6qF1y9yVlI=",
+			"path": "github.com/gorilla/mux",
+			"revision": "cf79e51a62d8219d52060dfc1b4e810414ba2d15",
+			"revisionTime": "2016-08-16T18:45:31Z"
+		}
+	],
+	"rootPath": "server"
+}
