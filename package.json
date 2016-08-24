@@ -8,7 +8,7 @@
     "build:servermac": "go build -o server_mac go/src/server/main.go",
     "build:server": "CGO_ENABLED=0 GOOS=linux go build -ldflags \"-s\" -a -installsuffix cgo -o server go/src/server/main.go",
     "start": "cp src/index.html dist/index.html && webpack-dev-server --hot --progress --colors",
-    "produce": "npm run lint && cp src/index.html dist/index.html && webpack --progress --colors"
+    "build:frontend": "cp src/index.html dist/index.html && webpack --progress --colors"
   },
   "author": "Maxime Heckel",
   "license": "MIT",
