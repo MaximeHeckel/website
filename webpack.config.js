@@ -3,7 +3,6 @@ var webpack = require('webpack');
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   module: {
@@ -31,11 +30,11 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    publicPath: '/',
+    publicPath: '/dist/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './'
   },
   plugins: [
       new webpack.NoErrorsPlugin()
