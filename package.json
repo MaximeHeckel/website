@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:servermac": "go build -o server_mac go/src/server/main.go",
     "build:server": "CGO_ENABLED=0 GOOS=linux go build -ldflags \"-s\" -a -installsuffix cgo -o server go/src/server/main.go",
-    "start": "cp src/index.html index.html && webpack-dev-server --hot --progress --colors",
-    "build:frontend": "cp src/index.html index.html && webpack --progress --colors"
+    "start": "export ENV='DEV'&& cp src/index.html index.html && webpack-dev-server --hot --progress --colors",
+    "build:frontend": "export ENV='PROD' && cp src/index.html index.html && webpack --progress --colors"
   },
   "author": "Maxime Heckel",
   "license": "MIT",
