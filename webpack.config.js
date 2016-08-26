@@ -1,5 +1,6 @@
 
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var entryBase = ['./src/index.js'];
 
@@ -20,15 +21,11 @@ module.exports = {
         },
       },
       {
-        test: /\.css?$/,
-        include: /src/,
-        loaders: [
-          'style',
-          'css',
-          'postcss',
-          'autoprefixer?browsers=last 3 versions',
-        ],
-      }],
+        test: /\.css/,
+        loaders: ['style', 'css'],
+        loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
+      },
+    ],
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
@@ -43,5 +40,6 @@ module.exports = {
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('styles.css'),
   ],
 };
