@@ -3,6 +3,9 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var atImport = require('postcss-import');
 var vars = require('postcss-simple-vars');
+var customMedia = require('postcss-custom-media');
+var nested = require('postcss-nested');
+var mediaMinMax = require('postcss-media-minmax');
 
 var entryBase = ['./src/index.js'];
 var plugins = [
@@ -54,7 +57,10 @@ module.exports = {
     atImport({
       path: ['node_modules', './src'],
     }),
+    nested(),
     vars(),
+    customMedia(),
+    mediaMinMax(),
     // Other PostCSS plugins
   ],
   output: {
