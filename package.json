@@ -5,10 +5,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export ENV='DEV'&& cp src/index.html index.html && webpack-dev-server --hot --progress --colors",
+    "build:frontend": "export ENV='PROD' && cp src/index.html index.html && webpack --progress --colors",
     "build:servermac": "go build -o server_mac go/src/server/main.go",
     "build:server": "CGO_ENABLED=0 GOOS=linux go build -ldflags \"-s\" -a -installsuffix cgo -o server go/src/server/main.go",
-    "start": "export ENV='DEV'&& cp src/index.html index.html && webpack-dev-server --hot --progress --colors",
-    "build:frontend": "export ENV='PROD' && cp src/index.html index.html && webpack --progress --colors"
+    "build": "npm run build:frontend && go run -v go/src/server/main.go -entry=./index.html -static=./"
   },
   "author": "Maxime Heckel",
   "license": "MIT",
@@ -26,6 +27,12 @@
     "eslint-plugin-react": "4.0.0",
     "estraverse-fb": "^1.3.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "postcss": "5.0.15",
+    "postcss-calc": "5.2.0",
+    "postcss-cssnext": "2.4.0",
+    "postcss-import": "7.1.3",
+    "postcss-loader": "0.7.0",
+    "postcss-simple-vars": "1.2.0",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
