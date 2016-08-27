@@ -41,6 +41,10 @@ module.exports = {
         // eslint-disable-next-line max-len
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minify!postcss-loader', { allChunks: true }),
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file-loader?name=/img/[name].[ext]',
+      },
     ],
   },
   resolve: {
