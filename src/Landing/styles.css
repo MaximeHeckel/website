@@ -7,9 +7,48 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-
-.title {
+.landing {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 175px;
   font-family: 'Helvetica';
   font-weight: 700;
-  color: $color-main-blue;
+  .subtitle {
+  	font-size: $font-size-subtitle;
+  	color: $color-black-gray;
+  	margin-bottom: $space-xxxxl;
+  }
+  .title {
+  	font-size: $font-size-title;
+    color: $color-main-blue;
+  }
+}
+
+@media (--xs) {
+  .landing {
+  	max-width: 90%;
+  }
+}
+
+@media (--gt-xs) {
+  .landing {
+  	max-width: 80%;
+  }
+}
+
+@media (--lt-md) {
+  .landing {
+  	.subtitle {
+  	  font-size: $font-size-subtitle-small;
+  	}
+  	.title {
+  	  font-size: $font-size-title-small;
+    }
+  }
+}
+
+@media (--gt-md) {
+  .landing {
+  	max-width: 950px;
+  }
 }

@@ -59,11 +59,11 @@ $line-height-text: 16px;
 $font-size-subtitle-small: 18px;
 $line-height-subtitle-small: 24px;
 
-$font-size-subtitle: 20px;
-$line-height-subtitle: 28px;
+$font-size-subtitle: 24px;
+$line-height-subtitle: 32px;
 
-$font-size-title-small: 24px;
-$line-height-title-small: 32px;
+$font-size-title-small: 32px;
+$line-height-headline: 40px;
 
 $font-size-title: 36px;
 $line-height-title: 44px;

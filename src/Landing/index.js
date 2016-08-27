@@ -11,9 +11,9 @@ with Golang, Node.JS, React, Redux and containers.`;
 class Landing extends Component {
   render() {
     return (
-      <div>
-        <h4 className={css.title}>{title}</h4>
-        <h1 className={css.title}>{mainTitle}</h1>
+      <div className={css.landing}>
+        <div className={css.subtitle}>{title}</div>
+        <div className={css.title}>{mainTitle}</div>
       </div>
     );
   }
