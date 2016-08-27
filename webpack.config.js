@@ -1,13 +1,26 @@
 
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-var entryBase = ['./src/index.js'];
 var atImport = require('postcss-import');
 var vars = require('postcss-simple-vars');
 
+var entryBase = ['./src/index.js'];
+var plugins = [
+  new webpack.NoErrorsPlugin(),
+  new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+  new ExtractTextPlugin('styles.css'),
+];
+
 if (process.env.ENV === 'DEV') {
   entryBase.push('webpack-dev-server/client?http://localhost:8080');
+}
+
+if (process.env.ENV === 'PROD') {
+  plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production'),
+    },
+  }));
 }
 
 module.exports = {
@@ -26,7 +39,7 @@ module.exports = {
         test: /\.css$/,
         exclude: /(github-markdown|normalize|react-select)\.css$/,
         // eslint-disable-next-line max-len
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader', { allChunks: true }),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minify!postcss-loader', { allChunks: true }),
       },
     ],
   },
@@ -48,8 +61,5 @@ module.exports = {
   devServer: {
     contentBase: './',
   },
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('styles.css'),
-  ],
+  plugins: plugins,
 };
