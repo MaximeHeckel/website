@@ -6,12 +6,11 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Helvetica';
 }
 .landing {
-  max-width: 70%;
   margin: 0 auto;
-  margin-top: 175px;
-  font-family: 'Helvetica';
+  margin-top: 110px;
   font-weight: 700;
   .subtitle {
   	font-size: $font-size-subtitle;
@@ -49,6 +48,6 @@ html {
 
 @media (--gt-md) {
   .landing {
-  	max-width: 950px;
+  	max-width: 900px;
   }
 }

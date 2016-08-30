@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  TopBar,
+} from '../components';
 import css from './styles.css';
 
 const title = 'Hi, I\'m Maxime';
@@ -11,9 +14,12 @@ with Golang, Node.JS, React, Redux and containers.`;
 class Landing extends Component {
   render() {
     return (
-      <div className={css.landing}>
-        <div className={css.subtitle}>{title}</div>
-        <div className={css.title}>{mainTitle}</div>
+      <div>
+        <TopBar contact />
+        <div className={css.landing}>
+          <div className={css.subtitle}>{title}</div>
+          <div className={css.title}>{mainTitle}</div>
+        </div>
       </div>
     );
   }

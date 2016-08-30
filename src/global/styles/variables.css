@@ -1,6 +1,7 @@
 /* COLORS */
 $color-white: #FFFFFF;
 $color-main-blue: #4468FB;
+$color-main-blue-focus: #4468CB;
 $color-black-gray: #5B5B5B;
 $color-twitter-blue: #10A1F4;
 $color-medium-green: #29CE8A;
@@ -51,20 +52,30 @@ $space-xxxl: 40px;
 $space-xxxxl: 48px;
 $space-xxxxxl: 56px;
 
+/* RADIUS */
+
+$border-radius-default: 3px;
+
+/* LOGO-SIZE */
+
+$default-logo-size: 60px;
+
 /* FONTS */
 
 $font-size-text: 12px;
 $line-height-text: 16px;
 
-$font-size-subtitle-small: 18px;
-$line-height-subtitle-small: 24px;
+$font-size-button: 12px;
 
-$font-size-subtitle: 24px;
-$line-height-subtitle: 32px;
+$font-size-subtitle-small: 16px;
+$line-height-subtitle-small: 22px;
 
-$font-size-title-small: 32px;
-$line-height-headline: 40px;
+$font-size-subtitle: 22px;
+$line-height-subtitle: 30px;
 
-$font-size-title: 36px;
-$line-height-title: 44px;
+$font-size-title-small: 30px;
+$line-height-headline: 38px;
+
+$font-size-title: 34px;
+$line-height-title: 42px;
 
