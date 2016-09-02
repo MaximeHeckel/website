@@ -24,6 +24,7 @@ func main() {
 	flag.Parse()
 
 	r := mux.NewRouter()
+	r.PathPrefix("/api/helloworld").HandlerFunc(APIHandler)
 	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(static)))
 	r.PathPrefix("/").HandlerFunc(IndexHandler(entry))
 
@@ -44,4 +45,9 @@ func IndexHandler(entrypoint string) func(w http.ResponseWriter, r *http.Request
 	}
 
 	return http.HandlerFunc(fn)
+}
+
+// APIHandler function that handles all api endpoints
+func APIHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello World")
 }

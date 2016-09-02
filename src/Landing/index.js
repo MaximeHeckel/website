@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {
   TopBar,
 } from '../components';
+import { helloworldrequest } from './actions/creators';
 import css from './styles.css';
 
 const title = 'Hi, I\'m Maxime';
@@ -12,6 +14,17 @@ enthusiast, currently working at Docker. I like playing
 with Golang, Node.JS, React, Redux and containers.`;
 
 class Landing extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func,
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(helloworldrequest()).then((payload) => {
+      console.log(payload);
+    });
+  }
+
   render() {
     return (
       <div>
@@ -25,4 +38,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default connect()(Landing);
