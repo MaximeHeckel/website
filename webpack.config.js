@@ -16,6 +16,12 @@ var plugins = [
 
 if (process.env.ENV === 'DEV') {
   entryBase.push('webpack-dev-server/client?http://localhost:8080');
+  plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('development'),
+      HOSTNAME: JSON.stringify('http://localhost:8000'),
+    },
+  }));
 }
 
 if (process.env.ENV === 'PROD') {

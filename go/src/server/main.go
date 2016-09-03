@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-	"time"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -24,18 +22,13 @@ func main() {
 	flag.Parse()
 
 	r := mux.NewRouter()
+	r.Headers("Content-Type", "application/json")
 	r.PathPrefix("/api/helloworld").HandlerFunc(APIHandler)
 	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(static)))
 	r.PathPrefix("/").HandlerFunc(IndexHandler(entry))
 
-	srv := &http.Server{
-		Handler:      handlers.LoggingHandler(os.Stdout, r),
-		Addr:         fmt.Sprintf(":%s", "8000"),
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
-	}
 	log.Println("Server started")
-	srv.ListenAndServe()
+	http.ListenAndServe(":8000", handlers.CORS()(r))
 }
 
 // IndexHandler function that handles the entrypoint of the react app
