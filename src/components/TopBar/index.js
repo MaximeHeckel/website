@@ -1,16 +1,35 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {
   Button,
 } from '../';
+import {
+  openModal,
+  closeModal,
+} from '../../Landing/actions/creators';
 import css from './styles.css';
 
+const dispatcher = {
+  openModal,
+  closeModal,
+};
+
+@connect(null, dispatcher)
 class TopBar extends Component {
   static propTypes = {
     contact: PropTypes.bool,
+    openModal: PropTypes.func,
+    closeModal: PropTypes.func,
   };
 
   handleClick() {
-    console.log('CLICK');
+    return this.props.openModal({
+      type: 'contact',
+      data: {
+        title: 'Contact me',
+        email: 'hello@maximeheckel.com',
+      },
+    });
   }
 
   renderContact() {

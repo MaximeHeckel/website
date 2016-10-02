@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import { HELLO_WORLD } from '../../Landing/actions';
+import landing from '../../Landing/reducer';
+//import { HELLO_WORLD } from '../../Landing/actions';
 
-const INITIAL = {
+/*const INITIAL = {
   test: null,
-};
+  landing: null,
+};*/
 
-function test(state = INITIAL, action) {
+/*function test(state = INITIAL, action) {
   switch (action.type) {
     case `${HELLO_WORLD}_PENDING`:
       return {
@@ -20,10 +22,10 @@ function test(state = INITIAL, action) {
     default:
       return state;
   }
-}
+}*/
 
 const rootReducer = combineReducers({
-  test,
+  landing,
 });
 
 export default rootReducer;

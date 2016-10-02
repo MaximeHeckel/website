@@ -17,10 +17,6 @@ html {
   	color: $color-black-gray;
   	margin-bottom: $space-xxxxl;
   }
-  .title {
-  	font-size: $font-size-title;
-    color: $color-main-blue;
-  }
 }
 
 @media (--xs) {
