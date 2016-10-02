@@ -1,10 +1,12 @@
 @import "../global/styles/utilities.css";
+@import 'https://fonts.googleapis.com/css?family=Ubuntu+Mono';
 
 html { 
   background: url(../img/background.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  -webkit-font-smoothing: antialiased;
   background-size: cover;
   font-family: 'Helvetica';
 }
@@ -17,11 +19,29 @@ html {
   	color: $color-black-gray;
   	margin-bottom: $space-xxxxl;
   }
+
+  .dockerContent {
+    margin-top: $space-xxxxxl;
+    height: 60px;
+    width: 100%;
+    background: $color-main-blue;
+
+    .cmd {
+      padding: $space-lg;
+      color: $color-white;
+      font-family: 'Ubuntu Mono';
+      font-size: $font-size-subtitle-small;
+    }
+  }
 }
 
 @media (--xs) {
   .landing {
   	max-width: 90%;
+
+    .dockerContent {
+      height: 100px;
+    }
   }
 }
 
@@ -38,6 +58,10 @@ html {
   	}
   	.title {
   	  font-size: $font-size-title-small;
+    }
+
+    .dockerContent {
+      height: 100px;
     }
   }
 }

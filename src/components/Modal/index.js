@@ -44,7 +44,7 @@ export default class Modal extends Component {
         borderRadius: '2px',
         position: 'relative',
         bottom: 'null',
-        top: '100px',
+        top: '75px',
         width: '740px',
         height: '500px',
         overflow: 'visible',
