@@ -10,7 +10,7 @@ html {
 }
 .landing {
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 90px;
   font-weight: 700;
   .subtitle {
   	font-size: $font-size-subtitle;

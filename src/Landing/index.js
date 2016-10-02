@@ -4,15 +4,14 @@ import {
   TopBar,
   Title,
 } from '../components';
+import {
+  mainTitle,
+  initTitle,
+} from './config';
 import PromptDispatcher from './components/PromptDispatcher';
+import LinkList from './components/LinkList';
 import css from './styles.css';
 
-const title = 'Hi, I\'m Maxime';
-
-const mainTitle = `I’m a San Francisco
-        based software engineer and space
-enthusiast, currently working at Docker. I like playing
-with Golang, Node.JS, React, Redux and containers.`;
 
 function mapStateToProps({ landing }) {
   const { modal } = landing;
@@ -32,8 +31,9 @@ class Landing extends Component {
       <div id="main-layout">
         <TopBar contact />
         <div className={css.landing}>
-          <div className={css.subtitle}>{title}</div>
+          <div className={css.subtitle}>{initTitle}</div>
           <Title text={mainTitle} />
+          <LinkList />
         </div>
         {!!this.props.modal && <PromptDispatcher prompt={this.props.modal} />}
       </div>

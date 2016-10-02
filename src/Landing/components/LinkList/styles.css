@@ -1,0 +1,30 @@
+@import "../global/styles/utilities.css";
+
+.list {
+  margin-top: 80px;
+}
+
+a.item {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: $space-lg;
+  font-size: $font-size-text;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.twitter {
+  color: $color-twitter-blue;
+}
+
+.medium {
+  color: $color-medium-green;
+}
+
+.instagram {
+  color: $color-instagram-blue;
+}
+
+.github {
+  color: $color-github-grey;
+}

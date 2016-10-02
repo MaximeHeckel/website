@@ -53,7 +53,7 @@ export class ContactModal extends Component {
     };
 
     return this.props.contactrequest(data).then(({ value }) => {
-      if (value.status <= 400) {
+      if (value.status < 400) {
         this.props.closeModal();
         this.props.openModal({
           type: 'thankyou',
