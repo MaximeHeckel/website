@@ -1,7 +1,8 @@
 @import "../global/styles/utilities.css";
 
-.form {
-  padding: $space-xxxl $space-md;
+.modalContent {
+  padding: $space-xl $space-md 0 $space-md;
+  height: 400px;
 }
 
 textarea {
@@ -41,7 +42,6 @@ textarea {
 
 .submit {
   float: right;
-  margin-top: $space-lg;
   display: inline-block;
 
   .submitButton {

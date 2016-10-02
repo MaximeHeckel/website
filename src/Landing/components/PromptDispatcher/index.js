@@ -4,8 +4,13 @@ import {
   default as ContactModal,
 } from '../ContactModal';
 
+import {
+  default as ThankyouModal,
+} from '../ThankyouModal';
+
 const MODAL_MAP = {
   ['contact']: ContactModal,
+  ['thankyou']: ThankyouModal,
 };
 
 export default function PromptDispatcher({ prompt }) {

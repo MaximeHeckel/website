@@ -6,7 +6,9 @@ import {
   Button,
 } from '../../../components';
 import {
+  openModal,
   closeModal,
+  contactrequest,
 } from '../../actions/creators';
 import css from './styles.css';
 
@@ -14,7 +16,9 @@ export class ContactModal extends Component {
   static propTypes = {
     title: PropTypes.string,
     email: PropTypes.string,
+    openModal: PropTypes.func,
     closeModal: PropTypes.func,
+    contactrequest: PropTypes.func,
   }
 
   constructor(...args) {
@@ -41,7 +45,22 @@ export class ContactModal extends Component {
   }
 
   handleSubmit() {
-    console.log('SENDING EMAIL TO ' + this.props.email);
+    const { email, subject, text } = this.state;
+    const data = {
+      email,
+      subject,
+      text,
+    };
+
+    return this.props.contactrequest(data).then(({ value }) => {
+      if (value.status <= 400) {
+        this.props.closeModal();
+        this.props.openModal({
+          type: 'thankyou',
+          data: {},
+        });
+      }
+    });
   }
 
   handleCancel() {
@@ -52,7 +71,7 @@ export class ContactModal extends Component {
     return (
       <Modal isOpen onCloseCall={this.handleCancel}>
         <Title text={this.props.title} />
-        <div className={css.form}>
+        <div className={css.modalContent}>
           <input
             className={css.input}
             onChange={this.onChangeInput.bind(this, 'email')}
@@ -66,7 +85,7 @@ export class ContactModal extends Component {
             placeholder="Subject"
           />
           <textarea
-            rows="10"
+            rows="9"
             className={css.input}
             onChange={this.onChangeInput.bind(this, 'text')}
             placeholder="Message"
@@ -87,4 +106,6 @@ export class ContactModal extends Component {
 
 export default connect(null, {
   closeModal,
+  openModal,
+  contactrequest,
 })(ContactModal);
