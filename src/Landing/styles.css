@@ -24,7 +24,7 @@ html {
     margin-top: $space-xxxxxl;
     height: 60px;
     width: 100%;
-    background: $color-main-blue;
+    background: $color-black-gray;
 
     .cmd {
       padding: $space-lg;
