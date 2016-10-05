@@ -55,8 +55,7 @@ export class ThankyouModal extends Component {
                   <br />
                   Or find me on LinkedIn
                   <br />
-                  at
-                  <a
+                  at <a
                     href="https://linkedin.com/in/heckelmaxime"
                     target="_blank"
                   >
