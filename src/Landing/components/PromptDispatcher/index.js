@@ -8,9 +8,14 @@ import {
   default as ThankyouModal,
 } from '../ThankyouModal';
 
+import {
+  default as CVModal,
+} from '../CVModal';
+
 const MODAL_MAP = {
   ['contact']: ContactModal,
   ['thankyou']: ThankyouModal,
+  ['cv']: CVModal,
 };
 
 export default function PromptDispatcher({ prompt }) {

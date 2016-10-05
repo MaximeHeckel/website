@@ -22,7 +22,14 @@ class TopBar extends Component {
     closeModal: PropTypes.func,
   };
 
-  handleClick() {
+  handleClickCV() {
+    return this.props.openModal({
+      type: 'cv',
+      data: {},
+    });
+  }
+
+  handleClickContact() {
     return this.props.openModal({
       type: 'contact',
       data: {
@@ -36,7 +43,13 @@ class TopBar extends Component {
     return (
       <div className={css.contact}>
         <Button
-          onClick={() => this.handleClick()}
+          onClick={() => this.handleClickCV()}
+          className={css.contactButton}
+        >
+          More
+        </Button>
+        <Button
+          onClick={() => this.handleClickContact()}
           className={css.contactButton}
         >
           Contact Me

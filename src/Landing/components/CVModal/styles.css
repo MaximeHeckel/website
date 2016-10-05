@@ -1,0 +1,53 @@
+@import "../global/styles/utilities.css";
+
+.modalContent {
+  padding: 0 $space-md $space-xxl $space-md;
+  height: 400px;
+}
+
+.content {
+  .dockerContent {
+    margin-top: $space-xxxxxl;
+    height: 250px;
+    width: 100%;
+    background: $color-black-gray;
+    border-radius: $border-radius-default;
+
+    .cmd {
+      padding: $space-lg;
+      color: $color-white;
+      font-family: 'Ubuntu Mono';
+      font-size: $font-size-subtitle-small;
+      font-weight: 600;
+
+      a {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .contactText {
+    margin-top: $space-xxxl;
+    color: $color-black-gray;
+    font-weight: 600;
+    font-size: $font-size-subtitle;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.close {
+  float: right;
+  margin-top: $space-xxl;
+  display: inline-block;
+
+  .closeButton {
+    color: $color-white !important;
+    background-color: $color-black-gray !important;
+    border: none !important;
+    cursor: pointer;
+  }
+}

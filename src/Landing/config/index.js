@@ -13,5 +13,4 @@ export const mainTitle = `I’m a San Francisco
 export const initTitle = 'Hi, I\'m Maxime';
 
 export const dockerCmd = `$ docker run
-  maximeheckel/info //To know more about me,
-  or https://linkedin.com/in/heckelmaxime`;
+  maximeheckel/info`;

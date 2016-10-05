@@ -19,29 +19,11 @@ html {
   	color: $color-black-gray;
   	margin-bottom: $space-xxxxl;
   }
-
-  .dockerContent {
-    margin-top: $space-xxxxxl;
-    height: 60px;
-    width: 100%;
-    background: $color-black-gray;
-
-    .cmd {
-      padding: $space-lg;
-      color: $color-white;
-      font-family: 'Ubuntu Mono';
-      font-size: $font-size-subtitle-small;
-    }
-  }
 }
 
 @media (--xs) {
   .landing {
   	max-width: 90%;
-
-    .dockerContent {
-      height: 100px;
-    }
   }
 }
 
@@ -58,10 +40,6 @@ html {
   	}
   	.title {
   	  font-size: $font-size-title-small;
-    }
-
-    .dockerContent {
-      height: 100px;
     }
   }
 }
