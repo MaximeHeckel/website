@@ -2,14 +2,18 @@
 @import 'https://fonts.googleapis.com/css?family=Ubuntu+Mono';
 
 html { 
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Helvetica';
+}
+
+body {
   background: url(../img/background.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  -webkit-font-smoothing: antialiased;
-  background-size: cover;
-  font-family: 'Helvetica';
+  margin: 0;
 }
+
 .landing {
   margin: 0 auto;
   margin-top: 90px;

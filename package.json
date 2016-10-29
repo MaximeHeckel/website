@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "export ENV=DEV && cp src/index.html index.html && cp -r src/img dist/img && webpack-dev-server --hot --progress --colors",
+    "dev": "export ENV=DEV && cp src/index.html index.html && cp -r src/img dist/img && webpack-dev-server --progress --colors",
     "server": "npm run build:server && go run -v go/src/server/main.go -entry=./index.html -static=./",
     "start": "npm-run-all -p -r server dev",
     "build:frontenddev": "cp src/index.html index.html && cp -r src/img dist/img && webpack --progress --colors",

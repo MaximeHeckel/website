@@ -43,6 +43,11 @@ export class ThankyouModal extends Component {
           <Title text={"More about me"} />
           <div className={css.content}>
             <div className={css.dockerContent}>
+              <div className={css.terminalHeader}>
+                <div className={css.redDot} />
+                <div className={css.yellowDot} />
+                <div className={css.greenDot} />
+              </div>
               <div className={css.cmd}>
                 <Typist cursor={cursor}>
                   {dockerCmd}
