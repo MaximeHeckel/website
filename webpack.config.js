@@ -16,12 +16,14 @@ var plugins = [
 
 if (process.env.ENV === 'DEV') {
   entryBase.push('webpack-dev-server/client?http://localhost:8080');
+  entryBase.push('webpack/hot/only-dev-server');
   plugins.push(new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('development'),
       HOSTNAME: JSON.stringify('http://localhost:8000'),
     },
   }));
+  plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 if (process.env.ENV === 'PROD') {
