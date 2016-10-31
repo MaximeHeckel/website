@@ -36,6 +36,7 @@ func main() {
 	r.Headers("Content-Type", "application/json")
 	r.PathPrefix("/api/v1/helloworld").HandlerFunc(APIHandler)
 	r.PathPrefix("/api/v1/contact").HandlerFunc(MailHandler)
+	r.PathPrefix("/api/v1/healthhook").HandlerFunc(HealthHandler)
 	r.PathPrefix("/dist").Handler(http.FileServer(http.Dir(static)))
 	r.PathPrefix("/").HandlerFunc(IndexHandler(entry))
 
@@ -94,4 +95,16 @@ func MailHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(400)
 		return
 	}
+}
+
+// HealthHandler ...
+func HealthHandler(w http.ResponseWriter, r *http.Request) {
+	log.Println("--- RECEIVED HEALTH DATA FROM HEALTH PULSE ---")
+	data, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(string(data))
 }
