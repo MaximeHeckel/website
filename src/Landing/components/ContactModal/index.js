@@ -69,27 +69,29 @@ export class ContactModal extends Component {
 
   render() {
     return (
-      <Modal isOpen onCloseCall={this.handleCancel}>
-        <Title text={this.props.title} />
+      <Modal isOpen >
         <div className={css.modalContent}>
-          <input
-            className={css.input}
-            onChange={this.onChangeInput.bind(this, 'email')}
-            value={this.state.email}
-            placeholder="Email"
-          />
-          <input
-            className={css.input}
-            onChange={this.onChangeInput.bind(this, 'subject')}
-            value={this.state.subject}
-            placeholder="Subject"
-          />
-          <textarea
-            rows="9"
-            className={css.input}
-            onChange={this.onChangeInput.bind(this, 'text')}
-            placeholder="Message"
-          />
+          <Title text={this.props.title} />
+          <div className={css.form}>
+            <input
+              className={css.input}
+              onChange={this.onChangeInput.bind(this, 'email')}
+              value={this.state.email}
+              placeholder="Email"
+            />
+            <input
+              className={css.input}
+              onChange={this.onChangeInput.bind(this, 'subject')}
+              value={this.state.subject}
+              placeholder="Subject"
+            />
+            <textarea
+              rows="9"
+              className={css.input}
+              onChange={this.onChangeInput.bind(this, 'text')}
+              placeholder="Message"
+            />
+          </div>
         </div>
         <div className={css.submit}>
           <Button
@@ -97,6 +99,12 @@ export class ContactModal extends Component {
             className={css.submitButton}
           >
             Submit
+          </Button>
+          <Button
+            onClick={() => this.handleCancel()}
+            className={css.closeButton}
+          >
+            Close
           </Button>
         </div>
       </Modal>

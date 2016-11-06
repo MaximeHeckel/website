@@ -38,7 +38,7 @@ export class ThankyouModal extends Component {
     };
 
     return (
-      <Modal isOpen onCloseCall={this.handleCancel}>
+      <Modal isOpen>
         <div className={css.modalContent}>
           <Title text={"More about me"} />
           <div className={css.content}>

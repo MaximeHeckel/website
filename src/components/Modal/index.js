@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import TransitionGroup from 'react-addons-css-transition-group';
 import styles from './styles.css';
-import ReactModal from 'react-modal';
+import transitions from './transitions.css';
 import classnames from 'classnames';
-import merge from 'lodash/merge';
 
 const {
   any,
@@ -26,48 +26,36 @@ export default class Modal extends Component {
       className,
       children,
       isOpen,
-      onCloseCall,
-      style,
     } = this.props;
-    const modalStyles = merge({
-      overlay: {
-        backgroundColor: 'rgba(0, 0, 0, .3)',
-        zIndex: '1000',
-        display: 'flex',
-        alignItems: 'baseline',
-        justifyContent: 'center',
-        overflowX: 'hidden',
-        overflowY: 'auto',
-        height: '100%',
-      },
-      content: {
-        borderRadius: '2px',
-        position: 'relative',
-        bottom: 'null',
-        top: '75px',
-        width: '740px',
-        height: '500px',
-        overflow: 'visible',
-        padding: 'null',
-        backgroundColor: '#ffffff',
-        outline: 'none',
-      },
-    }, style);
 
     const modalClass = classnames({
       [className]: !!className,
       [styles.modalClass]: true,
     });
 
+    if (isOpen) {
+      return (
+        <TransitionGroup
+          transitionName={transitions}
+          transitionAppearTimeout={500}
+          transitionAppear
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          <div className={modalClass}>
+            {children}
+          </div>
+        </TransitionGroup>
+      );
+    }
     return (
-      <ReactModal
-        className={modalClass}
-        style={ modalStyles }
-        isOpen={isOpen}
-        onRequestClose={onCloseCall}
-      >
-        { children }
-      </ReactModal>
+      <TransitionGroup
+        transitionName={transitions}
+        transitionAppearTimeout={500}
+        transitionAppear
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={300}
+      />
     );
   }
 }

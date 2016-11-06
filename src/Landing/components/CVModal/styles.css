@@ -1,7 +1,7 @@
 @import "../global/styles/utilities.css";
 
 .modalContent {
-  padding: 0 $space-md $space-xxl $space-md;
+  padding: $space-md $space-md $space-xxl $space-md;
   height: 400px;
   min-width: 350px;
 }

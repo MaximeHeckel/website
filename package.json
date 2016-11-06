@@ -5,11 +5,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "export ENV=DEV && cp src/index.html index.html && cp -r src/img dist/img && webpack-dev-server --progress --colors",
+    "dev": "export ENV=DEV && mkdir -p dist && cp src/index.html index.html && cp -r src/img dist/img && webpack-dev-server --progress --colors",
     "server": "npm run build:server && go run -v go/src/server/main.go -entry=./index.html -static=./",
     "start": "npm-run-all -p -r server dev",
-    "build:frontenddev": "cp src/index.html index.html && cp -r src/img dist/img && webpack --progress --colors",
-    "build:frontend": "export ENV='PROD' && cp src/index.html index.html && webpack --progress --colors && cp -r src/img dist/",
+    "build:frontenddev": "mkdir -p dist && cp src/index.html index.html && cp -r src/img dist/img && webpack --progress --colors",
+    "build:frontend": "export ENV='PROD' && mkdir -p dist && cp src/index.html index.html && webpack --progress --colors && cp -r src/img dist/",
     "build:servermac": "go build -o server_mac go/src/server/main.go",
     "build:server": "CGO_ENABLED=0 GOOS=linux go build -ldflags \"-s\" -a -installsuffix cgo -o server go/src/server/main.go",
     "build": "npm run build:frontenddev && server"
@@ -51,8 +51,8 @@
   },
   "dependencies": {
     "react": "^15.3.1",
+    "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "^15.3.1",
-    "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-typist": "^1.0.1",

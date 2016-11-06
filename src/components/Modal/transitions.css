@@ -1,0 +1,17 @@
+.appear {
+  transform: translateY(-100%);
+
+  &.appearActive {
+    transform: translateY(0%);
+  	transition: transform 300ms ease-out;
+  }
+}
+
+.leave {
+  transform: translateY(0%);
+
+  &.leaveActive {
+    transform: translateY(-100%);
+  	transition: transform 300ms ease-out;
+  }
+}

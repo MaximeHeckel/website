@@ -1,13 +1,18 @@
 @import "../global/styles/utilities.css";
 
 .modalContent {
-  padding: $space-xl $space-md 0 $space-md;
+  padding: $space-md $space-md $space-xxl $space-md;
   height: 400px;
+  min-width: 350px;
 }
 
 textarea {
   resize: none;
   overflow: auto;
+}
+
+.form {
+  margin: $space-lg;
 }
 
 .input {
@@ -42,6 +47,7 @@ textarea {
 
 .submit {
   float: right;
+  margin-top: $space-xxl;
   display: inline-block;
 
   .submitButton {
@@ -52,5 +58,12 @@ textarea {
     &:hover {
       background-color: $color-main-blue-focus !important;
     }
+  }
+
+  .closeButton {
+    color: $color-white !important;
+    background-color: $color-black-gray !important;
+    border: none !important;
+    cursor: pointer; 
   }
 }
