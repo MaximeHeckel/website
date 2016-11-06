@@ -1,4 +1,5 @@
 node_modules
 server_mac
+index.html
 dist/
 .DS_Store

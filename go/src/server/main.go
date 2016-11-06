@@ -1,4 +1,4 @@
-package main //import "server"
+package main //import "github.com/MaximeHeckel/website/go/src/server"
 
 import (
 	"encoding/json"

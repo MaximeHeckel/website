@@ -1,18 +1,19 @@
 {
   "name": "website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Personal website",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "export ENV=DEV && mkdir -p dist && cp src/index.html index.html && cp -r src/img dist/img && webpack-dev-server --progress --colors",
-    "server": "npm run build:server && go run -v go/src/server/main.go -entry=./index.html -static=./",
+    "dev": "export ENV=DEV && mkdir -p dist && cp src/index.html index.html && cp -r src/img/ dist/img && webpack-dev-server --progress --colors",
+    "server": "go run -v go/src/server/main.go -entry=./index.html -static=./",
     "start": "npm-run-all -p -r server dev",
     "build:frontenddev": "mkdir -p dist && cp src/index.html index.html && cp -r src/img dist/img && webpack --progress --colors",
     "build:frontend": "export ENV='PROD' && mkdir -p dist && cp src/index.html index.html && webpack --progress --colors && cp -r src/img dist/",
     "build:servermac": "go build -o server_mac go/src/server/main.go",
     "build:server": "CGO_ENABLED=0 GOOS=linux go build -ldflags \"-s\" -a -installsuffix cgo -o server go/src/server/main.go",
-    "build": "npm run build:frontenddev && server"
+    "build": "npm run build:frontenddev && server",
+    "clean": "rm -r dist && rm index.html"
   },
   "author": "Maxime Heckel",
   "license": "MIT",

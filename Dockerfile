@@ -1,10 +1,10 @@
-FROM node:5-slim
+FROM alpine:latest
 
-ADD . /
-
-RUN npm install --unsafe-perm=true --no-optional
-RUN npm run build:frontend
+ADD dist ./app/dist
+COPY server index.html ./app/
+WORKDIR /app
+RUN chmod +x server
 
 EXPOSE 8000
 
-ENTRYPOINT ["/server", "-entry=./index.html", "-static=./"]
+ENTRYPOINT ["./server", "-entry=./index.html", "-static=./"]
