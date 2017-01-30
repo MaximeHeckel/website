@@ -11,7 +11,7 @@ const store = configureStore();
 const routes = (<Route component={App}>
   <Route path="/" component={Landing} />
 </Route>);
-
+console.log("TEST")
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>{routes}</Router>
