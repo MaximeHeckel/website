@@ -2,5 +2,5 @@ node_modules
 server_mac
 server
 index.html
-dist/
+build/
 .DS_Store
