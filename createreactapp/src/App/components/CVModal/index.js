@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import { connect } from 'react-redux';
 import Typist from 'react-typist';
 import Modal from '../../../components/Modal';
@@ -56,6 +58,7 @@ export class ThankyouModal extends Component {
                   at <a
                     href="https://linkedin.com/in/heckelmaxime"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     https://linkedin.com/in/heckelmaxime
                   </a>

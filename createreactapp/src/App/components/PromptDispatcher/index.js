@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'; 
 
 import {
   default as ContactModal,
@@ -13,9 +14,9 @@ import {
 } from '../CVModal';
 
 const MODAL_MAP = {
-  ['contact']: ContactModal,
-  ['thankyou']: ThankyouModal,
-  ['cv']: CVModal,
+  'contact': ContactModal,
+  'thankyou': ThankyouModal,
+  'cv': CVModal,
 };
 
 export default function PromptDispatcher({ prompt }) {

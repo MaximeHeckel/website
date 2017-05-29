@@ -46,6 +46,7 @@
     "postcss-media-minmax": "^3.0.0",
     "postcss-nested": "^2.0.2",
     "postcss-simple-vars": "^4.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
