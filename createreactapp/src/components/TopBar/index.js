@@ -66,7 +66,7 @@ class TopBar extends Component {
     return (
       <div className={css.topbar}>
         <div className={css.logo}>
-          <img src="public/img/logo.png" alt="logo" />
+          <img src="dist/img/logo.png" alt="logo" />
         </div>
         {maybeRenderContact}
       </div>

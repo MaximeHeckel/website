@@ -1,0 +1,30 @@
+@import "global/styles/utilities.css";
+
+.topbar {
+  max-width: 80%;
+  height: 65px;
+  margin: 0 auto;
+  margin-top: $space-xl;
+  .logo {
+    display: inline-block;
+    img {
+      width: $default-logo-size;
+    }
+  }
+
+  .contact {
+    float: right;
+    margin-top: $space-xs;
+    display: inline-block;
+
+    .contactButton {
+      color: $color-main-blue !important;
+      background-color: transparent !important;
+      border: none !important;
+      cursor: pointer;
+      &:hover {
+        color: $color-main-blue-focus !important;
+      }
+    }
+  }
+}

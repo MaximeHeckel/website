@@ -1,0 +1,8 @@
+@import "global/styles/utilities.css";
+
+.title {
+  font-weight: 700;
+  font-size: $font-size-title;
+  line-height: $line-height-title;
+  color: $color-main-blue;
+}

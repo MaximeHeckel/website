@@ -1,0 +1,69 @@
+@import "../global/styles/utilities.css";
+
+.modalContent {
+  padding: $space-md $space-md $space-xxl $space-md;
+  height: 400px;
+  min-width: 350px;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+.form {
+  margin: $space-lg;
+}
+
+.input {
+  display: block;
+  width: 90%;
+  margin: 0;
+  margin-bottom: $space-xl;
+  border: none;
+  border-bottom: 2px solid $color-main-blue;
+  font-size: $font-size-subtitle-small;
+  padding: 0.5rem 0;
+  background-repeat: no-repeat;
+  color: $color-black-gray;
+  font-weight: 500;
+  
+  &:focus, &:valid {
+    box-shadow: none;
+    outline: none;
+    background-position: 0 0;
+  }
+
+  &[disabled] {
+    border-bottom: 1px dashed rgba(0,0,0, 0.12);
+    background-color: transparent;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-main-blue;
+    font-size: $font-size-subtitle-small;
+  }
+}
+
+.submit {
+  float: right;
+  margin-top: $space-xxl;
+  display: inline-block;
+
+  .submitButton {
+    color: $color-white !important;
+    background-color: $color-main-blue !important;
+    border: none !important;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-main-blue-focus !important;
+    }
+  }
+
+  .closeButton {
+    color: $color-white !important;
+    background-color: $color-black-gray !important;
+    border: none !important;
+    cursor: pointer; 
+  }
+}

@@ -1,0 +1,35 @@
+@import "global/styles/utilities.css";
+
+.button {
+  box-sizing: border-box;
+  position: relative;
+  outline: 0;
+  display: inline-block;
+  align-items: center;
+  border-style: solid;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  padding: 0 10px;
+  margin: 6px 8px;
+  min-width: 88px;
+  line-height: 32px;
+  min-height: 32px;
+  border-width: 2px;
+  border-radius: $border-radius-default;
+  font-size: $font-size-button;
+  color: white;
+  text-transform: uppercase;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}
