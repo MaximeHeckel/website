@@ -29,10 +29,10 @@ func main() {
 	var port string
 
 	flag.StringVar(&entry, "entry", "./index.html", "the entrypoint to serve.")
-	flag.StringVar(&static, "static", ".", "the directory to serve static files from.")
+	flag.StringVar(&static, "static", "./", "the directory to serve static files from.")
 	flag.StringVar(&port, "port", "8000", "the `port` to listen on.")
 	flag.Parse()
-	log.Println(static)
+
 	r := mux.NewRouter()
 	r.Headers("Content-Type", "application/json")
 	r.PathPrefix("/api/v1/helloworld").HandlerFunc(APIHandler)
