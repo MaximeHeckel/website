@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import {
-  TopBar,
-  Title,
-} from '../components';
+import TopBar from '../components/TopBar';
+import Title from '../components/Title';
 import {
   mainTitle,
   initTitle,
@@ -20,7 +18,8 @@ function mapStateToProps({ landing }) {
   };
 }
 
-class Landing extends Component {
+@connect(mapStateToProps, null)
+export default class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
     modal: PropTypes.array,
@@ -41,4 +40,3 @@ class Landing extends Component {
   }
 }
 
-export default connect(mapStateToProps, null)(Landing);

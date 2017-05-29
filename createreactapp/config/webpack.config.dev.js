@@ -9,6 +9,8 @@ const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
@@ -179,12 +181,16 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
+        exclude: /(github-markdown|normalize|react-select)\.css$/,
         use: [
           require.resolve('style-loader'),
           {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
+              modules: true,
+              localIdentName: '[hash:base64:5]',
+              minify: true,
             },
           },
           {
@@ -192,6 +198,13 @@ module.exports = {
             options: {
               ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
               plugins: () => [
+                require('postcss-import')({
+                    path: ['node_modules', './src'],
+                }),
+                require('postcss-simple-vars'),
+                require('postcss-custom-media'),
+                require('postcss-nested'),
+                require('postcss-media-minmax'),
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
                   browsers: [
@@ -242,6 +255,7 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new ExtractTextPlugin("styles.css"),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
@@ -250,6 +264,7 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
   },
+
   // Turn off performance hints during development because we don't do any
   // splitting or minification in interest of speed. These warnings become
   // cumbersome.

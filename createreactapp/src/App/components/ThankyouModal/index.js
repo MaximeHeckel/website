@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import {
-  Modal,
-  Title,
-  Button,
-} from '../../../components';
+import Modal from '../../../components/Modal';
+import Title from '../../../components/Title';
+import Button from '../../../components/Button';
 import {
   closeModal,
 } from '../../actions/creators';

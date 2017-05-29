@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Typist from 'react-typist';
-import {
-  Modal,
-  Button,
-  Title,
-} from '../../../components';
+import Modal from '../../../components/Modal';
+import Title from '../../../components/Title';
+import Button from '../../../components/Button';
 import {
   closeModal,
 } from '../../actions/creators';

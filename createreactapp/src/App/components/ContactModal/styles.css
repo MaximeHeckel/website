@@ -1,4 +1,4 @@
-@import "../global/styles/utilities.css";
+@import "global/styles/utilities.css";
 
 .modalContent {
   padding: $space-md $space-md $space-xxl $space-md;
