@@ -95,7 +95,6 @@ export class ContactModal extends Component {
           <Button
             onClick={() => this.handleCancel()}
             className={css.closeButton}
-            inverted={false}
           >
             Close
           </Button>
