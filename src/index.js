@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
-import App from './App';
-import Landing from './Landing';
+import App from './App/index.js';
 import configureStore from './global/store';
+//import registerServiceWorker from './registerServiceWorker';
+import './styles.css';
 
 const store = configureStore();
 
-const routes = (<Route component={App}>
-  <Route path="/" component={Landing} />
-</Route>);
-
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>{routes}</Router>
-  </Provider>,
-  document.getElementById('app')
-);
+    <Provider store={store}>
+        <App />
+    </Provider>,
+document.getElementById('root'));
+//registerServiceWorker();

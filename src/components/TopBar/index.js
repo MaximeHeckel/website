@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import { connect } from 'react-redux';
-import {
-  Button,
-} from '../';
+import Button from '../Button';
+import logo from './logo.png';
 import {
   openModal,
   closeModal,
@@ -66,7 +66,7 @@ class TopBar extends Component {
     return (
       <div className={css.topbar}>
         <div className={css.logo}>
-          <img src="public/img/logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         {maybeRenderContact}
       </div>

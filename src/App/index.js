@@ -1,13 +1,43 @@
-import { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
+import { connect } from 'react-redux';
+import TopBar from '../components/TopBar';
+import Title from '../components/Title';
+import {
+  mainTitle,
+  initTitle,
+} from './config';
+import PromptDispatcher from './components/PromptDispatcher';
+import LinkList from './components/LinkList';
+import css from './styles.css';
 
-class App extends Component {
+
+function mapStateToProps({ landing }) {
+  const { modal } = landing;
+  return {
+    modal,
+  };
+}
+
+@connect(mapStateToProps, null)
+export default class App extends Component {
   static propTypes = {
-    children: PropTypes.element,
+    dispatch: PropTypes.func,
+    modal: PropTypes.array,
   }
 
   render() {
-    return this.props.children;
+    return (
+      <div id="main-layout">
+        <TopBar contact />
+        <div className={css.landing}>
+          <div className={css.subtitle}>{initTitle}</div>
+          <Title text={mainTitle} />
+          <LinkList />
+        </div>
+        {!!this.props.modal && <PromptDispatcher prompt={this.props.modal} />}
+      </div>
+    );
   }
 }
 
-export default App;
