@@ -26,6 +26,10 @@ a.item {
   color: $color-instagram-blue;
 }
 
+.health {
+  color: $color-health;
+}
+
 .github {
   color: $color-github-grey;
 }

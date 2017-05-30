@@ -8,38 +8,20 @@ class LinkList extends Component {
   render() {
     return (
       <div className={css.list}>
-        <a
-          className={`${css.item} ${css.twitter}`}
-          href={socialLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-        <a
-          className={`${css.item} ${css.medium}`}
-          href={socialLinks.medium}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Medium
-        </a>
-        <a
-          className={`${css.item} ${css.instagram}`}
-          href={socialLinks.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
-        <a
-          className={`${css.item} ${css.github}`}
-          href={socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Github
-        </a>
+        {
+          Object.keys(socialLinks).map((value) => {
+            return (
+              <a
+                className={`${css.item} ${css[value]}`}
+                href={socialLinks[value]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {value}
+              </a>
+            )
+          }) 
+        }
       </div>
     );
   }

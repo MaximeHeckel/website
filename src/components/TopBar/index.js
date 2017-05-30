@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'; 
-import { connect } from 'react-redux';
 import Button from '../Button';
 import logo from './logo.png';
-import {
-  openModal,
-  closeModal,
-} from '../../App/actions/creators';
+import { email } from '../../App/config';
 import css from './styles.css';
 
-const dispatcher = {
-  openModal,
-  closeModal,
-};
-
-@connect(null, dispatcher)
 class TopBar extends Component {
   static propTypes = {
     contact: PropTypes.bool,
@@ -34,7 +24,7 @@ class TopBar extends Component {
       type: 'contact',
       data: {
         title: 'Contact me',
-        email: 'hello@maximeheckel.com',
+        email,
       },
     });
   }

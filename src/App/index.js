@@ -7,6 +7,10 @@ import {
   mainTitle,
   initTitle,
 } from './config';
+import {
+  openModal,
+  closeModal,
+} from './actions/creators';
 import PromptDispatcher from './components/PromptDispatcher';
 import LinkList from './components/LinkList';
 import css from './styles.css';
@@ -19,8 +23,12 @@ function mapStateToProps({ landing }) {
   };
 }
 
-@connect(mapStateToProps, null)
-export default class App extends Component {
+const dispatcher = {
+  openModal,
+  closeModal,
+}
+
+export class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func,
     modal: PropTypes.array,
@@ -29,7 +37,11 @@ export default class App extends Component {
   render() {
     return (
       <div id="main-layout">
-        <TopBar contact />
+        <TopBar
+          contact
+          openModal={this.props.openModal}
+          closeModal={this.props.closeModal}
+        />
         <div className={css.landing}>
           <div className={css.subtitle}>{initTitle}</div>
           <Title text={mainTitle} />
@@ -41,3 +53,4 @@ export default class App extends Component {
   }
 }
 
+export default connect(mapStateToProps, dispatcher)(App);

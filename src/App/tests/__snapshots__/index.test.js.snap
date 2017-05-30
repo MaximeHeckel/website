@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="main-layout"
+>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      <img
+        alt="logo"
+        src="logo.png"
+      />
+    </div>
+    <div
+      className={undefined}
+    >
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+      >
+        More
+      </button>
+      <button
+        className="undefined undefined"
+        onClick={[Function]}
+      >
+        Contact Me
+      </button>
+    </div>
+  </div>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      Hi, I'm Maxime
+    </div>
+    <div
+      className={undefined}
+    >
+      I’m a San Francisco
+        based software engineer and space
+        enthusiast, currently working at Docker. I like playing
+        with Golang, Node.JS, React, Redux and containers.
+    </div>
+    <div
+      className={undefined}
+    >
+      <a
+        className="undefined undefined"
+        href="https://twitter.com/MaximeHeckel"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        twitter
+      </a>
+      <a
+        className="undefined undefined"
+        href="https://medium.com/@MaximeHeckel"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        medium
+      </a>
+      <a
+        className="undefined undefined"
+        href="https://www.instagram.com/maximeheckel/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        instagram
+      </a>
+      <a
+        className="undefined undefined"
+        href="https://health.maximeheckel.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        health
+      </a>
+      <a
+        className="undefined undefined"
+        href="https://github.com/MaximeHeckel"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        github
+      </a>
+    </div>
+  </div>
+</div>
+`;
