@@ -1,0 +1,97 @@
+@import "global/styles/utilities.css";
+
+.modalContent {
+  padding: $space-md $space-md $space-xxl $space-md;
+  height: 400px;
+  min-width: 350px;
+}
+
+.content {
+  .terminalHeader {
+    height: 30px;
+  }
+
+  .redDot {
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border:1px solid #F96261;
+    background-color: #F96261;
+    width:8px;
+    height:8px;
+    display: inline-block;
+    margin-top: $space-xs;
+    margin-left: $space-xs;
+  }
+
+  .greenDot {
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border:1px solid #3DC951;
+    background-color: #3DC951;
+    width:8px;
+    height:8px;
+    display: inline-block;
+    margin-top: $space-xs;
+    margin-left: $space-xxs;
+  }
+
+  .yellowDot {
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    border:1px solid #FBBB4C;
+    background-color: #FBBB4C;
+    width:8px;
+    height:8px;
+    display: inline-block;
+    margin-top: $space-xs;
+    margin-left: $space-xxs;
+  }
+
+  .dockerContent {
+    margin-top: $space-xxxxxl;
+    height: 300px;
+    width: 100%;
+    background: $color-terminal-black;
+    border-radius: $border-radius-default;
+
+    .cmd {
+      padding: $space-lg;
+      color: $color-white;
+      font-family: 'Ubuntu Mono';
+      font-size: $font-size-subtitle-small;
+      font-weight: 600;
+
+      a {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .contactText {
+    margin-top: $space-xxxl;
+    color: $color-black-gray;
+    font-weight: 600;
+    font-size: $font-size-subtitle;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.close {
+  float: right;
+  margin-top: $space-xxl;
+  display: inline-block;
+
+  .closeButton {
+    color: $color-white !important;
+    background-color: $color-black-gray !important;
+    border: none !important;
+    cursor: pointer;
+  }
+}

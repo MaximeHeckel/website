@@ -1,20 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import {
-  Button,
-} from '../';
-import {
-  openModal,
-  closeModal,
-} from '../../Landing/actions/creators';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
+import Button from '../Button';
+import logo from './logo.png';
+import { email } from '../../App/config';
 import css from './styles.css';
 
-const dispatcher = {
-  openModal,
-  closeModal,
-};
-
-@connect(null, dispatcher)
 class TopBar extends Component {
   static propTypes = {
     contact: PropTypes.bool,
@@ -34,7 +24,7 @@ class TopBar extends Component {
       type: 'contact',
       data: {
         title: 'Contact me',
-        email: 'hello@maximeheckel.com',
+        email,
       },
     });
   }
@@ -66,7 +56,7 @@ class TopBar extends Component {
     return (
       <div className={css.topbar}>
         <div className={css.logo}>
-          <img src="dist/img/logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         {maybeRenderContact}
       </div>

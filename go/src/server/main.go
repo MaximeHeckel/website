@@ -29,7 +29,7 @@ func main() {
 	var port string
 
 	flag.StringVar(&entry, "entry", "./index.html", "the entrypoint to serve.")
-	flag.StringVar(&static, "static", ".", "the directory to serve static files from.")
+	flag.StringVar(&static, "static", "./", "the directory to serve static files from.")
 	flag.StringVar(&port, "port", "8000", "the `port` to listen on.")
 	flag.Parse()
 
@@ -37,7 +37,7 @@ func main() {
 	r.Headers("Content-Type", "application/json")
 	r.PathPrefix("/api/v1/helloworld").HandlerFunc(APIHandler)
 	r.PathPrefix("/api/v1/contact").HandlerFunc(MailHandler)
-	r.PathPrefix("/dist").Handler(noDirListing(http.FileServer(http.Dir(static))))
+	r.PathPrefix("/static").Handler(http.FileServer(http.Dir(static)))
 	r.PathPrefix("/").HandlerFunc(IndexHandler(entry))
 
 	log.Println("Server started")
