@@ -51,7 +51,6 @@
   }
 
   .dockerContent {
-    margin-top: $space-xxxxxl;
     height: 300px;
     width: 100%;
     background: $color-terminal-black;
@@ -73,7 +72,7 @@
 
   .contactText {
     margin-top: $space-xxxl;
-    color: $color-black-gray;
+    color: $color-gray;
     font-weight: 600;
     font-size: $font-size-subtitle;
 
@@ -90,7 +89,7 @@
 
   .closeButton {
     color: $color-white !important;
-    background-color: $color-black-gray !important;
+    background-color: $color-gray !important;
     border: none !important;
     cursor: pointer;
   }

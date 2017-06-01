@@ -21,11 +21,11 @@ textarea {
   margin: 0;
   margin-bottom: $space-xl;
   border: none;
-  border-bottom: 2px solid $color-main-blue;
+  border-bottom: 2px solid $color-black;
   font-size: $font-size-subtitle-small;
   padding: 0.5rem 0;
   background-repeat: no-repeat;
-  color: $color-black-gray;
+  color: $color-black;
   font-weight: 500;
   
   &:focus, &:valid {
@@ -40,7 +40,7 @@ textarea {
   }
 
   &::-webkit-input-placeholder {
-    color: $color-main-blue;
+    color: $color-black;
     font-size: $font-size-subtitle-small;
   }
 }
@@ -52,7 +52,7 @@ textarea {
 
   .submitButton {
     color: $color-white !important;
-    background-color: $color-main-blue !important;
+    background-color: $color-black !important;
     border: none !important;
     cursor: pointer;
     &:hover {
@@ -62,7 +62,7 @@ textarea {
 
   .closeButton {
     color: $color-white !important;
-    background-color: $color-black-gray !important;
+    background-color: $color-gray !important;
     border: none !important;
     cursor: pointer; 
   }

@@ -2,12 +2,13 @@
 $color-white: #FFFFFF;
 $color-main-blue: #4468FB;
 $color-main-blue-focus: #4468CB;
-$color-black-gray: #5B5B5B;
+$color-gray: #D0D1D3;
 $color-twitter-blue: #10A1F4;
 $color-medium-green: #29CE8A;
 $color-instagram-blue: #4162E5;
 $color-github-grey: #A29DA1;
 $color-terminal-black: #232424;
+$color-black: #070707;
 $color-health: #F52A64;
 
 /* SCREEN SIZES */

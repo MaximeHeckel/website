@@ -64,7 +64,7 @@ export class ContactModal extends Component {
     return (
       <Modal isOpen >
         <div className={css.modalContent}>
-          <Title text={this.props.title} />
+          <Title text={this.props.title} invert />
           <div className={css.form}>
             <input
               className={css.input}

@@ -16,15 +16,5 @@
     float: right;
     margin-top: $space-xs;
     display: inline-block;
-
-    .contactButton {
-      color: $color-main-blue !important;
-      background-color: transparent !important;
-      border: none !important;
-      cursor: pointer;
-      &:hover {
-        color: $color-main-blue-focus !important;
-      }
-    }
   }
 }

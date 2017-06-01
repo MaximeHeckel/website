@@ -4,5 +4,14 @@
   font-weight: 700;
   font-size: $font-size-title;
   line-height: $line-height-title;
-  color: $color-main-blue;
+  padding-bottom: 40px;
+  border-bottom: 4px solid $color-white;
+}
+
+.blackTitle {
+  color: $color-black;
+}
+
+.whiteTitle {
+  color: $color-white;
 }

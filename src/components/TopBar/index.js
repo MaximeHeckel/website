@@ -1,64 +1,39 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'; 
-import Button from '../Button';
+import PropTypes from 'prop-types';
+// eslint-disable-next-line no-unused-vars
 import logo from './logo.png';
-import { email } from '../../App/config';
 import css from './styles.css';
 
 class TopBar extends Component {
   static propTypes = {
-    contact: PropTypes.bool,
-    openModal: PropTypes.func,
-    closeModal: PropTypes.func,
+    buttons: PropTypes.arrayOf(PropTypes.node),
+    logo: PropTypes.bool,
   };
 
-  handleClickCV() {
-    return this.props.openModal({
-      type: 'cv',
-      data: {},
-    });
-  }
-
-  handleClickContact() {
-    return this.props.openModal({
-      type: 'contact',
-      data: {
-        title: 'Contact me',
-        email,
-      },
-    });
-  }
-
-  renderContact() {
+  renderButtons() {
+    const { buttons } = this.props;
     return (
       <div className={css.contact}>
-        <Button
-          onClick={() => this.handleClickCV()}
-          className={css.contactButton}
-        >
-          More
-        </Button>
-        <Button
-          onClick={() => this.handleClickContact()}
-          className={css.contactButton}
-        >
-          Contact Me
-        </Button>
+        {
+          buttons.map((button) => button)
+        }
       </div>
     );
   }
 
   render() {
-    const { contact } = this.props;
-
-    const maybeRenderContact = contact ? this.renderContact() : null;
-
+    const { logo } = this.props;
     return (
       <div className={css.topbar}>
-        <div className={css.logo}>
-          <img src={logo} alt="logo" />
-        </div>
-        {maybeRenderContact}
+        {
+          logo ?
+          (
+            <div className={css.logo}>
+              <img src={logo} alt="logo" />
+            </div>
+          ): null
+        }
+        {this.renderButtons()}
       </div>
     );
   }

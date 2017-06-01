@@ -12,6 +12,10 @@ a.item {
   font-size: $font-size-text;
   font-weight: 700;
   text-transform: uppercase;
+  transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    color: $color-white !important;
+  }
 }
 
 .twitter {

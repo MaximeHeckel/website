@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TopBar from '../components/TopBar';
 import Title from '../components/Title';
+import Button from '../components/Button';
 import {
   mainTitle,
   initTitle,
+  email,
 } from './config';
 import {
   openModal,
@@ -34,13 +36,41 @@ export class App extends Component {
     modal: PropTypes.array,
   }
 
+  handleClickCV() {
+    return this.props.openModal({
+      type: 'cv',
+      data: {},
+    });
+  }
+
+  handleClickContact() {
+    return this.props.openModal({
+      type: 'contact',
+      data: {
+        title: 'Contact me',
+        email,
+      },
+    });
+  }
+
   render() {
     return (
       <div id="main-layout">
         <TopBar
-          contact
-          openModal={this.props.openModal}
-          closeModal={this.props.closeModal}
+          buttons={
+            [(<Button
+              onClick={() => this.handleClickCV()}
+              className={css.contactButton}
+            >
+              More
+            </Button>),
+            (<Button
+              onClick={() => this.handleClickContact()}
+              className={css.contactButton}
+            >
+              Contact Me
+            </Button>)]
+          }
         />
         <div className={css.landing}>
           <div className={css.subtitle}>{initTitle}</div>

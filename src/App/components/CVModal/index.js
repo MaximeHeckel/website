@@ -35,7 +35,7 @@ export class ThankyouModal extends Component {
     return (
       <Modal isOpen>
         <div className={css.modalContent}>
-          <Title text={"More about me"} />
+          <Title text="More about me" invert />
           <div className={css.content}>
             <div className={css.dockerContent}>
               <div className={css.terminalHeader}>

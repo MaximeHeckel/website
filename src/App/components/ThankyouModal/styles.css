@@ -12,7 +12,7 @@
 
 .contactText {
   margin-top: $space-lg;
-  color: $color-black-gray;
+  color: $color-gray;
   font-weight: 500;
 }
 
@@ -23,7 +23,7 @@
 
   .closeButton {
     color: $color-white !important;
-    background-color: $color-black-gray !important;
+    background-color: $color-gray !important;
     border: none !important;
     cursor: pointer;
   }

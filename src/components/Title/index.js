@@ -4,13 +4,19 @@ import css from './styles.css';
 
 class Title extends Component {
   static propTypes = {
-    text: PropTypes.string,
+    text: PropTypes.node,
+    invert: PropTypes.bool,
   };
 
   render() {
-    const { text } = this.props;
+    const { text, invert } = this.props;
     return (
-      <div className={css.title}>{text}</div>
+      <div className={
+        `${css.title} ${invert ?
+        css.blackTitle : css.whiteTitle}`
+      }>
+        {text}
+      </div>
     );
   }
 }

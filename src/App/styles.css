@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: url(../img/background.png) no-repeat center center fixed; 
+  background: url(../img/background.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -20,8 +20,18 @@ body {
   font-weight: 700;
   .subtitle {
     font-size: $font-size-subtitle;
-    color: $color-black-gray;
+    color: $color-gray;
     margin-bottom: $space-xxxxl;
+  }
+}
+
+.contactButton {
+  color: $color-white !important;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  &:hover {
+    color: $color-main-blue-focus !important;
   }
 }
 

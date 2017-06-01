@@ -15,8 +15,7 @@
   font-family: inherit;
   text-decoration: none;
   overflow: hidden;
-  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 0 10px;
   margin: 6px 8px;
   min-width: 88px;
