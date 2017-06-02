@@ -10,6 +10,7 @@ class Title extends Component {
 
   render() {
     const { text, invert } = this.props;
+
     return (
       <div className={
         `${css.title} ${invert ?

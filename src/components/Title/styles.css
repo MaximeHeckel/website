@@ -4,14 +4,31 @@
   font-weight: 700;
   font-size: $font-size-title;
   line-height: $line-height-title;
+  letter-spacing: 0.6px;
   padding-bottom: 40px;
   border-bottom: 4px solid $color-white;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    &visited: {
+      color: inherit;
+    }
+  }
 }
 
 .blackTitle {
   color: $color-black;
+
+  a {
+    border-bottom: 4px solid $color-black;
+  }
 }
 
 .whiteTitle {
   color: $color-white;
+
+  a {
+    border-bottom: 4px solid $color-white;
+  }
 }

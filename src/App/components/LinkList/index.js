@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import {
-  socialLinks,
-} from '../../config';
 import css from './styles.css';
 
 class LinkList extends Component {
   render() {
+    const { links } = this.props;
+
     return (
       <div className={css.list}>
         {
-          Object.keys(socialLinks).map((value) => {
+          links ?
+          Object.keys(links).map((value, i) => {
             return (
               <a
+                key={`${value}-${i}`}
                 className={`${css.item} ${css[value]}`}
-                href={socialLinks[value]}
+                href={links[value]}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {value}
               </a>
             )
-          }) 
+          }) : null 
         }
       </div>
     );

@@ -5,9 +5,9 @@ import TopBar from '../components/TopBar';
 import Title from '../components/Title';
 import Button from '../components/Button';
 import {
-  mainTitle,
   initTitle,
   email,
+  socialLinks,
 } from './config';
 import {
   openModal,
@@ -15,6 +15,7 @@ import {
 } from './actions/creators';
 import PromptDispatcher from './components/PromptDispatcher';
 import LinkList from './components/LinkList';
+import MainTitle from './components/MainTitle';
 import css from './styles.css';
 
 
@@ -59,12 +60,14 @@ export class App extends Component {
         <TopBar
           buttons={
             [(<Button
+              key="more-button"
               onClick={() => this.handleClickCV()}
               className={css.contactButton}
             >
               More
             </Button>),
             (<Button
+              key="contact-button"
               onClick={() => this.handleClickContact()}
               className={css.contactButton}
             >
@@ -74,8 +77,8 @@ export class App extends Component {
         />
         <div className={css.landing}>
           <div className={css.subtitle}>{initTitle}</div>
-          <Title text={mainTitle} />
-          <LinkList />
+          <Title text={<MainTitle />} />
+          <LinkList links={socialLinks}/>
         </div>
         {!!this.props.modal && <PromptDispatcher prompt={this.props.modal} />}
       </div>

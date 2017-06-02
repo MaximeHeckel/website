@@ -23,7 +23,10 @@ export class ThankyouModal extends Component {
       <Modal isOpen onCloseCall={this.handleCancel}>
         <div className={css.modalContent}>
           <div className={css.content}>
-            <Title text="Thank you for contacting me!" />
+            <Title
+              text="Thank you for contacting me!"
+              invert
+            />
             <div className={css.contactText}>
               I'll try to get back to you ASAP.
             </div>
