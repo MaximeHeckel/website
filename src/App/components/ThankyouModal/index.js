@@ -24,7 +24,7 @@ export class ThankyouModal extends Component {
         <div className={css.modalContent}>
           <div className={css.content}>
             <Title
-              text="Thank you for contacting me!"
+              text="Thank you for contacting me! 🚀"
               invert
             />
             <div className={css.contactText}>

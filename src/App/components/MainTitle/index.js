@@ -22,18 +22,29 @@ class MainTitle extends Component {
           enthusiast, currently working at <div style={{ display: 'inline-block', width: '115px'}}>
           {
             this.state.showDockerLink ? (
-            <a onMouseOver={() => this.onHover()} href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">
+            <a 
+              onMouseOver={() => this.onHover()}
+              href="https://www.docker.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Docker
             </a>) :
-            <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">
-              <span
-                aria-label=""
-                aria-labelledby=""
-                onMouseOut={() => this.onHover()}
-                role="img"
-              > 
-                🐳🐳🐳
-              </span>
+            <a
+              style={{ border: 'none', textAlign: 'center' }}
+              href="https://www.docker.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div onMouseOut={() => this.onHover()}> 
+                <span
+                  role="img"
+                  aria-labelledby=""
+                  aria-label=""
+                >
+                  🐳
+                </span>
+              </div>
             </a>
           }</div>. I like playing
           with Golang, Node.JS, React, Redux and containers.
